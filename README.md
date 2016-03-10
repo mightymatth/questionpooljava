@@ -13,7 +13,7 @@ The entire application is written in Java programming language (Gradle project).
 * download [QuestionPool.jar](https://bitbucket.org/mightymatth8/questionpooljava/downloads/QuestionPool.jar) and [pitanjaTest.txt](https://bitbucket.org/mightymatth8/questionpooljava/downloads/pitanjaTest.txt) from [Download section](https://bitbucket.org/mightymatth8/questionpooljava/downloads)
 * open QuestionPool.jar
 
-![Starting screen](https://bitbucket.org/repo/6GrkLK/images/3151925930-qp1.png)
+![qpStart.png](https://bitbucket.org/repo/7895Re/images/2413767385-qpStart.png)
 
 * click "Choose File" and open file named "pitanjaTest.txt"
 * after selecting file click "Start"
