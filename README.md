@@ -25,7 +25,9 @@ The entire application is written in Java programming language (Gradle project).
 ### Navigation ###
 
 You have many ways to navigate through the questions:
+
 * **Forward**: right arrow, down arrow, space, page down, enter and mouse click on the button "Forward"
+
 * **Backward**: left arrow, up arrow, backspace, page up and mouse click on the button "Back"
 
 ### Do you want to write your own questions? ###
