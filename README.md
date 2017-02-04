@@ -11,11 +11,11 @@ The entire application is written in Java programming language (Gradle project).
 ### How to use it? ###
 
 * download [QuestionPool-1.1.jar](https://bitbucket.org/mightymatth8/questionpooljava/downloads/QuestionPool-1.1.jar) and [questionsTest.txt](https://bitbucket.org/mightymatth8/questionpooljava/downloads/questionsTest.txt) from [Download section](https://bitbucket.org/mightymatth8/questionpooljava/downloads)
-* open QuestionPool.jar
+* open QuestionPool-1.1.jar
 
 ![qpStart.png](https://bitbucket.org/repo/7895Re/images/2413767385-qpStart.png)
 
-* click "Choose File" and open file named "pitanjaTest.txt"
+* click "Choose File" and open file named "questionsTest.txt"
 * after selecting file click "Start"
 
 ![qp.gif](https://bitbucket.org/repo/7895Re/images/563426687-qp.gif)
