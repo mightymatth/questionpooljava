@@ -10,7 +10,7 @@ The entire application is written in Java programming language (Gradle project).
 
 ### How to use it? ###
 
-* download [QuestionPool.jar](https://bitbucket.org/mightymatth8/questionpooljava/downloads/QuestionPool.jar) and [pitanjaTest.txt](https://bitbucket.org/mightymatth8/questionpooljava/downloads/pitanjaTest.txt) from [Download section](https://bitbucket.org/mightymatth8/questionpooljava/downloads)
+* download [QuestionPool-1.1.jar](https://bitbucket.org/mightymatth8/questionpooljava/downloads/QuestionPool-1.1.jar) and [questionsTest.txt](https://bitbucket.org/mightymatth8/questionpooljava/downloads/questionsTest.txt) from [Download section](https://bitbucket.org/mightymatth8/questionpooljava/downloads)
 * open QuestionPool.jar
 
 ![qpStart.png](https://bitbucket.org/repo/7895Re/images/2413767385-qpStart.png)
@@ -18,7 +18,7 @@ The entire application is written in Java programming language (Gradle project).
 * click "Choose File" and open file named "pitanjaTest.txt"
 * after selecting file click "Start"
 
-![myimage.gif](https://bitbucket.org/repo/7895Re/images/1216042890-myimage.gif)
+![qp.gif](https://bitbucket.org/repo/7895Re/images/563426687-qp.gif)
 
 * this is a sample of question with provided answers
 
@@ -56,7 +56,3 @@ if answer is correct, line must begin with character **'.'** .
 I added feature that converts file encoding if it's different than your default encoding on your system. For example, if you are using Windows OS (e.g. encoding windows_1250) and you are reading a file that somebody made on Linux (e.g. encoding utf-8), you will have a conflict that will cause your locale letters break. 
 To fix that, we need to guess encoding of certain file, because we cannot be 100% sure that some file is encoded in, e.g. utf-8. This program uses [ICU4J](http://icu-project.org/apiref/icu4j/) to guess encoding, but this will not always fix an issue. Guessing will only be good method if your file is long enough to detect file encoding.
 If you write your file on English, you will not have any problems because you won't have special locale characters.
-
-### Want to make a new feature? ###
-
-* just clone it to your local repository and make a pull request
