@@ -54,5 +54,5 @@ if answer is correct, line must begin with character **'.'** .
 ### Locale and file encoding explanation ###
 
 I added feature that converts file encoding if it's different than your default encoding on your system. For example, if you are using Windows OS (e.g. encoding windows_1250) and you are reading a file that somebody made on Linux (e.g. encoding utf-8), you will have a conflict that will cause your locale letters break. 
-To fix that, we need to guess encoding of certain file, because we cannot be 100% sure that some file is encoded in, e.g. utf-8. This program uses [ICU4J](http://icu-project.org/apiref/icu4j/) to guess encoding, but this will not always fix an issue. Guessing will only be good method if your file is long enough to detect file encoding.
+To fix that, we need to guess encoding of certain file, because we cannot be 100% sure that some file is encoded in, e.g. utf-8. This program uses [ICU4J](http://site.icu-project.org/home) to guess encoding, but this will not always fix an issue. Guessing will only be good method if your file is long enough to detect file encoding.
 If you write your file on English, you will not have any problems because you won't have special locale characters.
