@@ -49,7 +49,7 @@ if answer is correct, line must begin with character **'.'** .
 
 **Comment Section** -> comments on answers (can contain multiple lines too)
 
-* or just look at the [pitanjaTest.txt](https://bitbucket.org/mightymatth8/questionpooljava/downloads/pitanjaTest.txt) and you will understand rules with these examples (all types of questions and answers are covered)
+* or just look at the [questionsTest.txt](https://bitbucket.org/mightymatth8/questionpooljava/downloads/questionsTest.txt) and you will understand rules with these examples (all types of questions and answers are covered)
 
 ### Locale and file encoding explanation ###
 
