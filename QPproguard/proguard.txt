@@ -1,0 +1,15 @@
+-injars ../build/libs/QuestionPoolProject-1.1-all.jar
+-outjars ../build/libs/QuestionPool-1.1-proguard.jar
+
+-libraryjars <java.home>/lib/rt.jar
+-libraryjars <java.home>/lib/ext/jfxrt.jar
+
+-keepclassmembers,allowshrinking,allowobfuscation class * {
+    synthetic <methods>;
+}
+
+-dontwarn
+
+-keepclasseswithmembers public class com.javafx.main.Main, com.mightymatth.questionpooljava.Main {
+    public static void main(java.lang.String[]);
+}

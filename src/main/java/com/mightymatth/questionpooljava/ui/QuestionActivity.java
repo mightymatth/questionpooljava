@@ -1,3 +1,10 @@
+package com.mightymatth.questionpooljava.ui;
+
+import com.mightymatth.questionpooljava.question.BaseQuestion;
+import com.mightymatth.questionpooljava.question.MultipleAnswerQuestion;
+import com.mightymatth.questionpooljava.question.SingleAnswerQuestion;
+import com.mightymatth.questionpooljava.states.ParsingState;
+import com.mightymatth.questionpooljava.states.UserState;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -6,10 +13,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.effect.Effect;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -80,25 +91,25 @@ public class QuestionActivity {
         if (shuffleAnswers.isSelected()) {
             for ( BaseQuestion tempQuestionObject : questionList) {
                 if (tempQuestionObject instanceof MultipleAnswerQuestion) {
-                    Collections.shuffle(((MultipleAnswerQuestion) tempQuestionObject).answerList);
+                    Collections.shuffle(((MultipleAnswerQuestion) tempQuestionObject).getAnswerList());
                 }
             }
         }
 
 
         // configuring buttons
-        leftButton = new Button("<< Back");
+        leftButton = new Button("\u25C0  Back");
         leftButton.setFocusTraversable(false);
         leftButton.setPrefWidth(120);
 
-        rightButton = new Button("Forward >>");
+        rightButton = new Button("Forward  \u25B6");
         rightButton.setFocusTraversable(false);
         rightButton.setPrefWidth(120);
 
         // 1) Text field
         VBox textBox = new VBox();
         textBox.setPadding(new Insets(15));
-        textBox.setAlignment(Pos.TOP_LEFT);
+        textBox.setAlignment(Pos.TOP_CENTER);
         textBox.setSpacing(8);
 
 
@@ -191,10 +202,7 @@ public class QuestionActivity {
         // checking whether index is reachable when relativeOffset
         // is added to current index...
         if (indexCurrentQuestion + relativeOffset < 0
-                || indexCurrentQuestion + relativeOffset > questionList.size()) {
-            System.out.println("You are trying to access the index that does not exist.");
-            return;
-        }
+                || indexCurrentQuestion + relativeOffset > questionList.size()) return;
 
         currentState = nextState;
         indexCurrentQuestion += relativeOffset;
@@ -212,8 +220,8 @@ public class QuestionActivity {
         // if located on last question and last stage,
         // change right button to 'Finish!'.
         if (indexCurrentQuestion.equals(questionList.size() - 1)
-                && currentState.equals(UserState.SHOWING_ANSWER)) rightButton.setText("Finish!");
-        else if (currentState.equals(UserState.READING_QUESTION)) rightButton.setText("Forward >>");
+                && currentState.equals(UserState.SHOWING_ANSWER)) rightButton.setText("Finish  \u2714");
+        else if (currentState.equals(UserState.READING_QUESTION)) rightButton.setText("Forward  \u25B6");
 
         // go to the end scene if finished with all questions.
         if (indexCurrentQuestion.equals(questionList.size())) {
@@ -224,14 +232,21 @@ public class QuestionActivity {
 
         // setting ordering numbers on beginning of every question.
         BaseQuestion tempQuestionObject = questionList.get(indexCurrentQuestion);
-        String info = "(" + (indexCurrentQuestion+1) + "/" + questionList.size() + ") ";
+        String info = "(" + (indexCurrentQuestion + 1) + "/" + questionList.size() + ") ";
+        double progress = (indexCurrentQuestion + 1.0) / questionList.size();
 
 
         // clearing old data to put new.
         textBox.getChildren().clear();
 
+        // adding question number
+        Text questionNumberText = new Text(info);
+        questionNumberText.setFill(getColorByPercentage(progress, Color.GREEN, Color.RED));
+        questionNumberText.setTextAlignment(TextAlignment.CENTER);
+        textBox.getChildren().add(questionNumberText);
+
         // adding question text
-        ModifiedText questionText = new ModifiedText(info + tempQuestionObject.getQuestionText() + "\n");
+        ModifiedText questionText = new ModifiedText(tempQuestionObject.getQuestionText() + "\n");
         questionText.setStyle("-fx-font-weight: bolder; -fx-font-size: 120%;");
         textBox.getChildren().add(questionText);
 
@@ -240,7 +255,7 @@ public class QuestionActivity {
 
 
             int i = 0;
-            for (MultipleAnswerQuestion.answerPair tempPair : ((MultipleAnswerQuestion) tempQuestionObject).answerList) {
+            for (MultipleAnswerQuestion.answerPair tempPair : ((MultipleAnswerQuestion) tempQuestionObject).getAnswerList()) {
 
                 ModifiedText answer =
                         new ModifiedText(Character.toString((char)(97+i)) + ") " + tempPair.getAnswer());
@@ -395,6 +410,10 @@ public class QuestionActivity {
         };
     }
 
+    private Paint getColorByPercentage(double percentage, Color paintFrom, Color paintTo) {
+        double hue = (percentage*(paintTo.getHue() - paintFrom.getHue())) + paintFrom.getHue();
+        return Color.hsb(hue, 1, 0.5);
+    }
 
 }
 

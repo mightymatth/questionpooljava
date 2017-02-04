@@ -1,3 +1,5 @@
+package com.mightymatth.questionpooljava.states;
+
 /**
  * Created by matth on 22.02.16..
  */

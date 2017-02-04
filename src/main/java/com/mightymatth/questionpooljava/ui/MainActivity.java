@@ -1,3 +1,5 @@
+package com.mightymatth.questionpooljava.ui;
+
 import com.ibm.icu.text.CharsetDetector;
 import com.ibm.icu.text.CharsetMatch;
 import javafx.application.Application;
@@ -35,19 +37,16 @@ public class MainActivity extends Application {
     // defining elements
     Button chooseFileButton = new Button("Choose File");
     Button startButton  = new Button("Start");
-    Image coverImage = new Image(MainActivity.class.getResourceAsStream("cover.jpg"));
+    Image coverImage;
     Text message = new Text("Welcome!");
     CheckBox shuffleQuestions;
     CheckBox shuffleAnswers;
     Text copyrightLabel = new Text("\u00a9 2016 - Matija Pevec @ FER - pevec@live.com");
     File mainFile = null;
 
-    public static void main (String[] args) {
-        launch(args);
-    }
-
     @Override
     public void start(Stage primaryStage) throws IOException {
+        coverImage = new Image(this.getClass().getClassLoader().getResourceAsStream("cover.jpg"));
 
         primaryStage.setTitle("Question Pool");
 
@@ -188,12 +187,6 @@ public class MainActivity extends Application {
             fileChooser.setInitialDirectory(new File(mainFile.getParent()));
             message.setText(mainFile.getName() + " selected.");
             message.setFill(Color.GREEN);
-
-
-
-
-
-
 
         });
 

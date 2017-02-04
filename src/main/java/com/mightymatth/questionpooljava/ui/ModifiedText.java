@@ -1,3 +1,5 @@
+package com.mightymatth.questionpooljava.ui;
+
 import javafx.scene.text.Text;
 
 /**
