@@ -26,7 +26,7 @@ jobs:
       run: mv .gradle/build/libs/QuestionPool-1.1-proguard.jar latest-build.jar
 
     - name: Create artifact
-    - uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@master
       with:
         name: latest-build
         path: latest-build.jar
