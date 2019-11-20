@@ -5,11 +5,6 @@ version '1.1'
 
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'javafx-gradle-plugin'
-
-
-mainClassName = "com.mightymatth.questionpooljava.Main"
-
 
 // option to show warnings on 'gradle build'
 gradle.projectsEvaluated {
@@ -18,8 +13,8 @@ gradle.projectsEvaluated {
     }
 }
 
+
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
@@ -35,22 +30,16 @@ buildscript {
     }
     dependencies {
         classpath 'net.sf.proguard:proguard-gradle:5.0'
-        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
     }
 }
+
+
+mainClassName = "com.mightymatth.questionpooljava.Main"
 
 jar {
     manifest {
         attributes 'Main-Class': mainClassName
     }
-}
-
-jfx {
-    // minimal requirement for jfxJar-task
-    mainClass = mainClassName
-    
-    // minimal requirement for jfxNative-task
-    vendor = 'QuestionPool'
 }
 
 
@@ -67,6 +56,7 @@ task fatJar(type: Jar) {
     }
     with jar
 }
+
 
 // Define a ProGuard task.
 task proguard(type: ProGuardTask) {

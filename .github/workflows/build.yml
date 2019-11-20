@@ -1,6 +1,9 @@
-name: CI
+name: Build Master
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -22,11 +25,12 @@ jobs:
       run: ./gradlew fatJar
 
     - name: Shrink with ProGuard
-      run: ./gradlew proguard
-    - run: mv build/libs/QuestionPool-1.1-proguard.jar latest-build.jar
+      run: |
+        ./gradlew proguard
+        mv build/libs/QuestionPool-1.1-proguard.jar build.jar
 
     - name: Create artifact
       uses: actions/upload-artifact@master
       with:
-        name: latest-build
-        path: latest-build.jar
+        name: build_artifact
+        path: build.jar
