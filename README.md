@@ -13,12 +13,12 @@ The entire application is written in Java programming language (Gradle project).
 * download `QuestionPool.jar` from [the latest release](https://github.com/mightymatth/questionpooljava/releases) and [questionsTest.txt](/resources/questionTest.txt)
 * open QuestionPool.jar with `java -jar QuestionPool.jar`
 
-![qpStart.png](https://bitbucket.org/repo/7895Re/images/2413767385-qpStart.png)
+![qp_screen1.png](/resources/qp_screen1.png)
 
 * click "Choose File" and open file named "questionsTest.txt"
 * after selecting file click "Start"
 
-![qp.gif](https://bitbucket.org/repo/7895Re/images/563426687-qp.gif)
+![qp_screen2.gif](/resources/qp_screen2.gif)
 
 * this is a sample of question with provided answers
 
