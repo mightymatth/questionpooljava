@@ -44,6 +44,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: build_artifact
+          path: ./
       - run: unzip build.zip
 
       - name: Create Release
@@ -67,4 +68,3 @@ jobs:
           asset_path: ./build.jar
           asset_name: QuestionPool_${{ github.ref }}.jar
           asset_content_type: application/java-archive
-          
