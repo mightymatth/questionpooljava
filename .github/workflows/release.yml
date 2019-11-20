@@ -45,6 +45,7 @@ jobs:
         with:
           name: build_artifact
           path: ./
+      - run: ls la
       - run: unzip build.zip
 
       - name: Create Release
