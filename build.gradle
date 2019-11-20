@@ -5,6 +5,7 @@ version '1.1'
 
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'javafx-gradle-plugin'
 
 // option to show warnings on 'gradle build'
 gradle.projectsEvaluated {
@@ -30,9 +31,12 @@ buildscript {
     }
     dependencies {
         classpath 'net.sf.proguard:proguard-gradle:5.0'
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
     }
 }
 
+
+apply plugin: 'javafx-gradle-plugin'
 
 mainClassName = "com.mightymatth.questionpooljava.Main"
 
@@ -40,6 +44,14 @@ jar {
     manifest {
         attributes 'Main-Class': mainClassName
     }
+}
+
+jfx {
+    // minimal requirement for jfxJar-task
+    mainClass = mainClassName
+    
+    // minimal requirement for jfxNative-task
+    vendor = 'MeinName'
 }
 
 
