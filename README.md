@@ -10,7 +10,7 @@ The entire application is written in Java programming language (Gradle project).
 
 ### How to use it? ###
 
-* download `QuestionPool.jar` from [the latest release](https://github.com/mightymatth/questionpooljava/releases) and [questionsTest.txt](/resources/questionTest.txt)
+* download `QuestionPool.jar` from [the latest release](https://github.com/mightymatth/questionpooljava/releases) and [questionsTest.txt](/resources/questionsTest.txt)
 * open QuestionPool.jar with `java -jar QuestionPool.jar`
 
 ![qp_screen1.png](/resources/qp_screen1.png)
@@ -49,7 +49,7 @@ if answer is correct, line must begin with character **'.'** .
 
 **Comment Section** -> comments on answers (can contain multiple lines too)
 
-* or just look at the [questionsTest.txt](https://bitbucket.org/mightymatth8/questionpooljava/downloads/questionsTest.txt) and you will understand rules with these examples (all types of questions and answers are covered)
+* or just look at the [questionsTest.txt](/resources/questionsTest.txt) and you will understand rules with these examples (all types of questions and answers are covered)
 
 ### Locale and file encoding explanation ###
 
