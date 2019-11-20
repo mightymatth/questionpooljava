@@ -1,0 +1,58 @@
+
+#Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+
+Egestas vehicula tortor
+.Aliquam lacus mauris
+Nam dolor quam
+Nullam tristique felis
+
+Morbi mauris ligula, imperdiet id faucibus id, facilisis quis risus. Etiam feugiat commodo quam volutpat tristique.
+
+#Uspostavljena je komunikacija između računala s adresama 121.16.172.136/28 i 121.16.172.163/28. Jesu li ona povezana usmjeriteljem?
+
+.jesu
+nisu
+ne znam
+
+Kada pogledamo prvih 28 bitova kod oba računala, uočit ćemo da su isti te je to znak da pripadaju istoj mreži.
+
+#IP adresa računala je 140.146.94.68/19. Adresa mreže u kojoj se nalazi to računalo je:
+
+.140.146.64.0
+140.146.0.0
+140.146.32.0
+140.146.96.0 
+
+Prvih 19 bitova ostavimo kakvi jesu, a ostale stavimo na 0. Tako dobivamo adresu mreže.
+
+#Ako u tablici usmjeravanja ne postoji odredište koje se podudara s odredištem datagrama koji je potrebno proslijediti, usmjeritelj će:
+
+.ispustiti datagram i poslati ICMP poruku na izvorište paketa
+proslijediti datagram na najbliži usmjerivač
+ne znam
+samo ispustiti datagram
+vratiti isti datagram na izvorište paketa
+
+$Zadana je PM s 8 linija po 16B i izravnim preslikavanjem. Svako promašeno čitanje bajta inicira prijenos podataka iz DRAM-a od:
+
+16 B
+(šesnaest byteova)
+
+Svaki puta kada promašimo moramo popuniti
+cijelu liniju, što znači - 16B
+
+$Zadana je PM s 8 linija po 16B. Koliko komparatora oznaka adrese je potrebno kod potpuno asocijativnog preslikavanja?
+
+8 (osam)
+
+Koliko linija - toliko komparatora
+
+#Koji od navedenih pojmova
+ ne predstavlja jednu od šest 
+ glavnih vrsta vektorskih instrukcija?
+
+.instrukcije indikacije
+instrukcije vektor-skalar
+instrukcije redukcije
+.instrukcije kontrakcije
+instrukcije vektor-memorija
