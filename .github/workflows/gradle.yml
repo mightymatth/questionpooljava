@@ -9,13 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - run: curl -O "https://download.java.net/java/GA/jdk9/9/binaries/openjdk-9_linux-x64_bin.tar.gz"
+    - run: curl -O "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz"
     - name: Set Java
       uses: actions/setup-java@master
       with:
         version: 9
         architecture: x64
-        jdkFile: ./openjdk-9_linux-x64_bin.zip
+        jdkFile: ./OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz
     - name: Build fatJar
       run: ./gradlew fatJar
     - name: Shrink with ProGuard
