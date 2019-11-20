@@ -23,7 +23,7 @@ jobs:
 
     - name: Shrink with ProGuard
       run: ./gradlew proguard
-    - run: mv .gradle/build/libs/QuestionPool-1.1-proguard.jar latest-build.jar
+    - run: mv build/libs/QuestionPool-1.1-proguard.jar latest-build.jar
 
     - name: Create artifact
       uses: actions/upload-artifact@master
