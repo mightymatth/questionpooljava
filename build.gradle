@@ -27,6 +27,7 @@ dependencies {
 
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
     }
     dependencies {
@@ -34,9 +35,6 @@ buildscript {
         classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
     }
 }
-
-
-apply plugin: 'javafx-gradle-plugin'
 
 mainClassName = "com.mightymatth.questionpooljava.Main"
 

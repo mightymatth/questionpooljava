@@ -5,6 +5,8 @@
 # files for the dex VM
 *.dex
 
+.DS_Store
+
 # Java class files
 *.class
 
@@ -32,3 +34,4 @@ proguard/
 .gradletasknamecache
 .gradle/
 build/
+
